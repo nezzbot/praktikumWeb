@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <nav class="navstyle2">
+                <h1>Portofolio</h1>
+                <ul class="ulStyle1">
+                    <li><a href="">home</a></li>
+                    <li><a href="">Info</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <aside class="aside">
+            <div>
+                <form>
+                    <span>Makanan : </span>
+                    <input type="text" id="makanan" oninput="data()"><br>
+                    <span>Jumlah : </span>
+                    <input type="number" id="jumlah" oninput="data()"><br>
+                    <span>Voucher : </span>
+                    <input type="text" id="voucher" oninput="data()"><br>
+                </form>
+            </div>
+            <div>
+                Nama Pesanan : <span id="pesanan"></span><br>
+                Jumlah Pesanan : <span id="jumlahPesanan"></span><br>
+                Total Diskon : <span id="diskon"></span><br>
+                Total Harga : <span id="harga"></span>
+            </div>
+        
+        <main class="main">
+            <div class="centerNoBox">
+                <img src="nezha2.jpeg" width="400" height="300">                
+            </div>
+        
+        </main>
+        <footer class="footer">
+            <div class="centerNoBox">
+                <h1 class="textStyleBlack"><b>| Engine Work by Nezha |</b></h1>
+            </div>
+            <div class="centerNoBox">
+                <p class="textStyleBlack">© 2023 Nezha. All rights reserved. This work is protected by copyright law and may not be reproduced, distributed, transmitted, displayed, or published without the prior written permission Nezha. Unauthorized use or reproduction of this work is strictly prohibited and may result in legal action.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        function data(){
+            let pesanan=document.getElementById("makanan").value;
+            let jumlah=document.getElementById("jumlah").value;
+            let totalHarga=0;
+            let diskon=""
+            let vocer=document.getElementById("voucher").value;
+            if(vocer=="ASPRAKLEONGANTENG"){
+                totalHarga=20000*jumlah*(20/100)
+                diskon="20%"
+            }
+            else{
+                totalHarga=20000*jumlah
+            }
+            let tampilHarga=new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(totalHarga)
+            document.getElementById("pesanan").innerHTML=pesanan;
+            document.getElementById("jumlahPesanan").innerHTML=jumlah;
+            document.getElementById("diskon").innerHTML=diskon;
+            document.getElementById("harga").innerHTML=tampilHarga
+        }
+        
+
+
+    </script>
+</body>
+</html>
