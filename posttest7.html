@@ -1,0 +1,99 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<bod>
+    <div id="togel">
+        <button onclick="tambahClass()">Enable Center</button>
+        <button onclick="tambahClass2()">Enable Background</button>
+        <button onclick="tambahClass3()">Fahsionate Text</button>
+        <button onclick="bikingrid()">Gridify</button>
+        <div id="div1">
+            <form>
+                <span>Makanan : </span>
+                <input type="text" id="makananytty" oninput="data()"><br>
+                <span>Jumlah : </span>
+                <input type="number" id="jumlah" oninput="data()"><br>
+                <span>Voucher : </span>
+                <input type="text" id="voucher" oninput="data()"><br>
+            </form>
+        </div>
+        
+        <div id="div2">
+            Nama Pesanan : <span id="pesanan"></span><br>
+            Jumlah Pesanan : <span id="jumlahPesanan"></span><br>
+            Total Diskon : <span id="diskon"></span><br>
+            Total Harga : <span id="harga"></span>
+        </div>
+        <div id="div3">
+            <div id="testarray"></div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function tambahClass() {
+            var element = document.getElementById("togel");
+            element.classList.toggle("divCenter");
+        }
+        function tambahClass2() {
+            var element = document.getElementById("togel");
+            element.classList.toggle("color");
+        }
+        function tambahClass3() {
+            var element = document.getElementById("togel");
+            element.classList.toggle("text1");
+        }
+        function bikingrid() {
+            var element = document.getElementById("togel");
+            var element2 = document.getElementById("div1");
+            var element3 = document.getElementById("div2");
+            var element4 = document.getElementById("div3");
+            element.classList.toggle("grid-container");
+            element2.classList.toggle("grid-container_div");
+            element3.classList.toggle("grid-container_div");
+            element4.classList.toggle("grid-container_div");
+        }
+        var array
+
+
+        
+        function data(){
+            let pesanan=document.getElementById("makananytty").value;
+            let jumlah=document.getElementById("jumlah").value;
+            let totalHarga=0;
+            let diskon=""
+            let vocer=document.getElementById("voucher").value;
+            if(vocer=="ASPRAKLEONGANTENG"){
+                totalHarga=20000*jumlah*(20/100)
+                diskon="20%"
+            }
+            else{
+                totalHarga=20000*jumlah
+            }
+            let tampilHarga=new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(totalHarga)
+            document.getElementById("pesanan").innerHTML=pesanan;
+            document.getElementById("jumlahPesanan").innerHTML=jumlah;
+            document.getElementById("diskon").innerHTML=diskon;
+            document.getElementById("harga").innerHTML=tampilHarga
+        }
+        let tust
+        array=["afrizal","rakesh","bala"]
+        var arrayDisplayElement = document.getElementById("testarray");
+        function arrFunction(){
+
+        }
+
+        var ul = document.createElement("ul");
+
+       
+        for (var i = 0; i < array.length; i++) {
+            var li = document.createElement("li");
+            li.textContent = array[i];
+            ul.appendChild(li);
+        }
+        arrayDisplayElement.appendChild(ul);
+        console.log(tust)
+
+
+    </script>
+</bod>

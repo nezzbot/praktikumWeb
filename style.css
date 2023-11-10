@@ -1,0 +1,27 @@
+.divCenter{
+    text-align: center;
+}
+
+.color{
+    background-image: linear-gradient(to bottom right, rgb(194, 138, 216), rgb(123, 232, 247)); 
+}
+
+.text1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: double;
+    font-size: medium;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    background-color: #000000;
+    padding: 10px;
+}
+
+.grid-container_div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
