@@ -1,0 +1,30 @@
+<head>
+
+</head>
+<body>
+    
+    <form action="proses.php" method="post">
+        nilai matakuliahn 1 <input type="number" name="mk1"><br>
+        nilai matakuliahn 2 <input type="text" name="mk2"><br>
+        nilai matakuliahn 3 <input type="text" name="mk3"><br>
+        <input type="submit">
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("submitForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            var formData = new FormData(this);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "process.php", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("result").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send(formData);
+        });
+    </script>
+</body>
