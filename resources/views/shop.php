@@ -17,7 +17,32 @@
     </style>
 </head>
 <body>
+<div class="container mt-4">
+        <div class="row">
+            @for ($i = 1; $i <= 6; $i++)
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card {{ $i }}</h5>
+                            <p class="card-text">Description for Card {{ $i }}</p>
+                            <!-- Add more card content as needed -->
+                            <button class="btn btn-primary">Show Form</button>
+                            <form style="display: none;">
+                                @csrf
+                                <label for="voucherId">Voucher ID:</label>
+                                <input type="text" id="voucherId" name="voucher_id" required>
 
+                                <label for="totalBuy">Total Buy:</label>
+                                <input type="number" id="totalBuy" name="total_buy" required>
+
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            @endfor
+        </div>
+    </div>
 
     <div>
         <form id="clickForm" action="{{ route('recordclick') }}" method="post">
